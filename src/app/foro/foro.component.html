@@ -1,0 +1,37 @@
+<div class="container mt-5 mb-5">
+    <h2 class="text-center"><i class="fas fa-users"></i> CHAT</h2>
+    <br>
+    <div class="row md-col-12">
+        <div class="container luid col-md-6 col-10 ">
+            <div id="chat" *ngFor="let post of arrPost">
+                <div>
+                    <span class="text-muted">{{post.fecha | date: 'short'}}</span>
+
+                    <p class="text-uppercase font-weight-bold p-2">{{post.usuario}} : </p>
+                    <p class="p-2"> {{post.mensaje}}</p>
+
+                </div>
+            </div>
+        </div>
+        <div class="col-md-5 col-12">
+            <div class="mt-4">
+                <h3 class="text-center mb-2">ESCRIBE ALGO</h3>
+            </div>
+            <form class="shadow p-3 mb-5 bg-white rounded" [formGroup]="foro" (ngSubmit)="onSubmit()">
+                <div class="form-group text-center">
+                    <label> <strong style="color: rgba(0, 0, 0, 0.623)">{{user}} {{userApellido}}</strong> </label>
+                </div>
+
+                <div class="form-group">
+                    <label> <strong>Texto</strong> </label>
+                    <textarea class="form-control" cols="30" rows="10" formControlName="mensaje"></textarea>
+                </div>
+                <div class="">
+                    <input type="submit" value="Enviar" class="btn btn-outline-secondary btn-block">
+                </div>
+
+            </form>
+        </div>
+
+
+    </div>

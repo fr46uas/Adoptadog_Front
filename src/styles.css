@@ -1,0 +1,16 @@
+@import url('https://fonts.googleapis.com/css?family=Indie+Flower|Montserrat:400,700&display=swap');
+/*
+
+
+    font-family: 'Montserrat', sans-serif;
+
+    font-family: 'Indie Flower', cursive;
+
+
+*/
+
+body{
+   font-family: 'Montserrat', sans-serif;
+   font-size: 16px;
+   font-weight: 400; 
+}

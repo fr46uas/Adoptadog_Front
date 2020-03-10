@@ -1,0 +1,32 @@
+/* #velo{
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color:black;
+    opacity: 0.8;
+    z-index: 9999;
+    padding: 2%;
+}
+
+.login{
+    border-radius: 10%;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    background-color: lightgreen;
+    height: 75vh;
+    margin: 15vh auto;
+    color: black ;
+    font-weight: bold
+}
+#img{
+    font-size: 60px;
+    color:black;
+}
+
+#url a{
+    display: inline-block;
+    color: black;
+} */

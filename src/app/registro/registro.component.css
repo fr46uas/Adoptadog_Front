@@ -1,0 +1,35 @@
+input.ng-valid{
+    border: 1px solid green;
+}
+
+input.ng-invalid.ng-touched {
+    border: 1px solid red;
+}
+
+.error {
+    color: red;
+    font-size: 16px;
+}
+#btn {
+    padding-bottom: 20px;
+    margin: 0 auto;
+}
+
+h2{
+    margin-top: 30px;
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+.modal-body {
+    max-height: calc(100vh - 210px);
+    overflow-y: auto;
+    background-color: white;
+}
+
+.text-center{
+    margin-top: 20px;
+}
+div form div #box{
+     transform: scale(2);
+}

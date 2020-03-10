@@ -1,0 +1,225 @@
+<nav class="navbar navbar-expand-lg navbar-light sticky-top" style="background-color: #8ec443">
+    <a class="navbar-brand" [routerLink]="['/principal']" (click)="scroll()"><i class="fa fa-paw fa-lg"></i> <span
+            class="logo">ADOPTA<span>DOG</span></span></a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown"
+        aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon "> </span>
+    </button>
+    <div class="collapse navbar-collapse " style="background-color: #8ec443" id="navbarNavDropdown">
+        <ul class="navbar-nav ml-auto">
+
+            <!-- BOTON MAPA RESPONSIVE -->
+
+            <li class="nav-item text-center">
+                <a class="nav-link mt-2 p-3 d-block d-lg-none" [routerLink]="['/mapa']" [routerLinkActive]="'active'"
+                    (click)="scroll()">
+                    Mapa</a>
+            </li>
+
+            <!-- BOTON MAPA -->
+
+            <li class="nav-item text-center">
+                <a id="link" class="nav-link mt-2 m-2 d-none d-lg-block" [routerLink]="['/mapa']"
+                    [routerLinkActive]="'active'" (click)="scroll()">
+                    Mapa</a>
+            </li>
+
+            <!-- BOTON NOSOTROS RESPONSIVE -->
+
+            <li class="nav-item text-center">
+                <a class="nav-link mt-2 d-block d-lg-none" [routerLink]="['/quienessomos']"
+                    [routerLinkActive]="'active'" (click)="scroll()"> Quiénes
+                    Somos</a>
+            </li>
+
+            <!-- BOTON NOSOTROS -->
+
+            <li class="nav-item text-center">
+                <a id="link" class="nav-link mt-2 d-none d-lg-block" [routerLink]="['/quienessomos']"
+                    [routerLinkActive]="'active'" (click)="scroll()"> Quiénes
+                    Somos</a>
+            </li>
+
+            <!-- BOTON FORO RESPONSIVE SI HAY TOKEN -->
+
+            <li *ngIf="token == ''" class="nav-item text-center">
+                <a class="nav-link mt-2 d-block d-lg-none" data-toggle="modal" data-target="#exampleModalForo"
+                    [routerLinkActive]="'active'" (click)="scroll()">Chat</a>
+            </li>
+
+            <!-- BOTON FORO RESPONSIVE SI NO HAY TOKEN -->
+
+            <li *ngIf="token != ''" class="nav-item text-center">
+                <a class="nav-link mt-2 d-block d-lg-none" [routerLink]="['/chat']" [routerLinkActive]="'active'"
+                    (click)="scroll()">Chat</a>
+            </li>
+
+            <!-- BOTON FORO SI HAY TOKEN -->
+
+            <li *ngIf="token == ''" class="nav-item text-center">
+                <a id="link" class="nav-link mt-2 d-none d-lg-block" data-toggle="modal" data-target="#exampleModalForo"
+                    [routerLinkActive]="'active'" (click)="scroll()">Chat</a>
+            </li>
+
+            <!-- BOTON FORO SI NO HAY TOKEN -->
+
+            <li *ngIf="token != ''" class="nav-item text-center">
+                <a id="link" class="nav-link mt-2 d-none d-lg-block" [routerLink]="['/chat']"
+                    [routerLinkActive]="'active'" (click)="scroll()">Chat</a>
+            </li>
+
+            <!-- BOTON REGISTRATE RESPONSIVE SI NO HAY TOKEN -->
+
+            <li *ngIf="token == ''" class="nav-item text-center">
+                <a class="nav-link mt-2 d-block d-lg-none" [routerLink]="['/registro']" [routerLinkActive]="'active'"
+                    (click)="scroll()">
+                    Regístrate</a>
+            </li>
+
+            <!-- BOTON REGISTRATE SI NO HAY TOKEN -->
+
+            <li *ngIf="token == ''" class="nav-item text-center">
+                <a id="link" class="nav-link mt-2 d-none d-lg-block" [routerLink]="['/registro']"
+                    [routerLinkActive]="'active'" (click)="scroll()">
+                    Regístrate</a>
+            </li>
+
+            <!-- MODAL INICIO RESPONSIVE SI NO HAY TOKEN -->
+
+            <li *ngIf="token == ''" class="nav-item text-center d-block d-lg-none">
+                <a id="inicio" class="nav-link mt-2" data-toggle="modal" data-target="#exampleModalCenter"
+                    [routerLink]="['/login']" [routerLinkActive]="'active'"> <i id="on"
+                        class="fas fa-user-circle"></i></a>
+            </li>
+
+            <!-- BOTON ROJO CERRAR SESION RESPONSIVE SI NO HAY TOKEN -->
+
+            <li *ngIf="token != ''" class="nav-item text-center d-block d-lg-none">
+                <a id="inicio" class="nav-link" (click)="cerrarSesion()" style="color: rgba(255, 0, 0, 0.76);"
+                    (click)="scroll()"> <i id="off" class="fas fa-sign-out-alt"></i>
+                </a>
+            </li>
+            <br>
+        </ul>
+
+
+    </div>
+
+    <!-- MODAL INICIO SI NO HAY TOKEN -->
+
+    <div *ngIf="token == ''" class="nav-item text-center d-none d-lg-block nx-auto">
+        <a id="inicio" class="nav-link" data-toggle="modal" data-target="#exampleModalCenter" [routerLink]="['/login']"
+            [routerLinkActive]="'active'"> <i id="on" class="fas fa-user-circle"></i> </a>
+    </div>
+
+    <!-- USER INICIO SESION SI HAY TOKEN -->
+
+    <div *ngIf="token != ''" id="user" class="nav-item text-center d-none d-lg-block nx-auto mr-1">
+        <span class="nav-link"><i id="user_icon" class="fas fa-user-circle mt-2"></i> {{user}}
+            {{userApellido}}
+        </span>
+    </div>
+
+    <!-- BOTON ROJO SI HAY TOKEN -->
+
+    <div *ngIf="token != ''" class="nav-item text-center d-none d-lg-block nx-auto">
+        <a id="inicio" class="nav-link" (click)="cerrarSesion()" style="color: rgba(255, 0, 0, 0.76);"
+            (click)="scroll()"><i id="off" class="fas fa-sign-out-alt"></i>
+        </a>
+    </div>
+
+
+</nav>
+
+<div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle"
+    aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content" style="background-color: #EFBE3D" [formGroup]="login">
+            <button type="button" class="close text-right p-3" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true"><i class="fas fa-times-circle P-2"></i></span>
+            </button>
+            <div class="text-center mb-4">
+                <i id="img" class="fa fa-user-circle"></i>
+            </div>
+            <div class="text-center">
+                <h5 class="modal-title font-weight-bold" id="exampleModalLongTitle">INICIO SESIÓN</h5>
+            </div>
+            <div class="modal-body">
+                <div class="form-group mt-2">
+                    <div>
+                        <label class="font-weight-bold">Email</label>
+                        <input type="text" class="form-control" formControlName="email">
+                    </div>
+                    <div class="form-group mt-2">
+                        <div>
+                            <label class="font-weight-bold">Contraseña</label>
+                            <input type="password" class="form-control" formControlName="password"
+                                data-toggle="password">
+                        </div>
+                    </div>
+                    <div id="btn" class="text-center">
+                        <button (click)="onSubmit(login)" class="btn btn-outline-dark btn-block" data-dismiss="modal"
+                            [routerLink]="['/principal']">Enviar</button>
+                    </div>
+                </div>
+            </div>
+            <div class="text-center mt-2">
+                <a class="font-weight-bold" style="color: rgba(38, 38, 41, 0.685);" href="#">Olvidaste tu contraseña</a>
+            </div>
+            <div class="text-center mb-2">
+                <a [routerLink]="['/registro']" style="color: rgba(38, 38, 41, 0.685);" class="font-weight-bold"
+                    data-dismiss="modal">
+                    ¿No tienes cuenta? Registrate</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- MODAL PARA INICIAR SESION EN EL FORO -->
+
+<div class="modal fade" id="exampleModalForo" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle"
+    aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content" style="background-color: #EFBE3D" [formGroup]="login">
+            <button type="button" class="close text-right p-3" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true"><i class="fas fa-times-circle P-2"></i></span>
+            </button>
+            <div class="text-center mb-4">
+                <i id="img" class="fa fa-user-circle"></i>
+            </div>
+            <div class="text-center">
+                <h5 class="modal-title font-weight-bold" id="exampleModalLongTitle">INICIO SESIÓN</h5>
+            </div>
+            <div class="modal-body">
+                <div class="form-group mt-2">
+                    <div>
+                        <label class="font-weight-bold">Email</label>
+                        <input type="text" class="form-control" formControlName="email">
+                    </div>
+                    <div class="form-group mt-2">
+                        <div>
+                            <label class="font-weight-bold">Contraseña</label>
+                            <input type="password" class="form-control" formControlName="password"
+                                data-toggle="password">
+                        </div>
+                    </div>
+                    <div id="btn" class="text-center">
+                        <button (click)="onSubmit(login)" class="btn btn-outline-dark btn-block"
+                            data-dismiss="modal">Enviar</button>
+                    </div>
+                </div>
+            </div>
+            <div class="text-center mt-2">
+                <a class="font-weight-bold" style="color: rgba(38, 38, 41, 0.685);" href="#">Olvidaste tu contraseña</a>
+            </div>
+            <div class="text-center mb-2">
+                <a [routerLink]="['/registro']" style="color: rgba(38, 38, 41, 0.685);" class="font-weight-bold"
+                    data-dismiss="modal">
+                    ¿No tienes cuenta? Registrate</a>
+            </div>
+        </div>
+    </div>
+</div>
+<router-outlet></router-outlet>
+<app-footer class="footer">
+</app-footer>

@@ -1,0 +1,178 @@
+<div class="container mt-5">
+    <div class="row card-group p-3">
+        <div class="p-3 mb-5 bg-white rounded col-12 col-lg-6 col-xl-4">
+            <div class="shadow p-3">
+                <h3 class="text-center">PASO 1</h3>
+                <div class="card-body text-center">
+                    <h5 class="card-title">BUSCA A TU COMPAÑERO</h5>
+                    <p class="card-text">Justo debajo se encuentra nuestro buscador. Elije las preferencias que más
+                        te
+                        gusten para localizar a tu compañero o compañera de viaje ideal</p>
+                    <i id="icon" class="fas fa-dog text-center"></i>
+
+                </div>
+            </div>
+        </div>
+        <div class="p-3 mb-5 bg-white rounded col-12 col-lg-6  col-xl-4">
+            <div class="shadow p-3">
+                <h3 class="text-center">PASO 2</h3>
+                <div class="card-body text-center">
+                    <h5 class="card-title">LOCALÍZALO</h5>
+                    <p class="card-text">Una vez lo tengas localizado. Pincha sobre el mapa de la ficha para saber
+                        dónde se
+                        encuentra y, de esta forma, ponerte en contacto con el centro para su adopción.</p>
+                    <i id="icon" class="fas fa-map-marker-alt text-center"></i>
+                </div>
+            </div>
+        </div>
+        <div class="p-3 mb-5 bg-white rounded col-12 col-lg-12  col-xl-4">
+            <div class="shadow p-3">
+                <h3 class="text-center">PASO 3</h3>
+                <div class="card-body text-center">
+                    <h5 class="card-title">VE POR EL</h5>
+                    <p class="card-text">¿Ya sabes dónde se encuentra? ¡No lo dudes mas! Sin duda estará
+                        esperándote
+                        para
+                        formar parte de la familia.
+                    </p>
+                    <i id="icon" class="fas fa-car-side text center mt-5"></i>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="mt-3" id="buscador">
+        <h2 class="text-center mt-2 mb-2"><i class="fa fa-search"></i> ENCUENTRA A TU AMIGO</h2>
+        <form class="mt-4" [formGroup]="buscador" (ngSubmit)="onSubmit()">
+            <div _ngcontent class="form-group input-group">
+                <div _ngcontent-c5 class="offset-md-1 offset-x1-2 col-md-4 col-x1-3 text-center control-label">
+                    <label _ngcontent-c5>Centro</label>
+                </div>
+                <div _ngcontent-c5 class="col-md-4 col-x1-4 inputGroupContainer">
+                    <select _ngcontent-c5="" class="form-control ng-untouched ng-pristine ng-invalid"
+                        formControlName="perrera" placeholder="Centro" type="text">
+                        <option value=""></option>
+
+                        <option *ngFor="let perrera of arrPerreras" value="{{perrera.id}}">
+                            {{perrera.nombre}}
+                        </option>
+
+                    </select>
+                </div>
+            </div>
+            <div _ngcontent class="form-group input-group">
+                <div _ngcontent-c5 class="offset-md-1 offset-x1-2 col-md-4 col-x1-3 text-center control-label">
+                    <label _ngcontent-c5>Raza</label>
+                </div>
+                <div _ngcontent-c5 class="col-md-4 col-x1-4 inputGroupContainer">
+                    <select _ngcontent-c5="" class="form-control ng-untouched ng-pristine ng-invalid"
+                        formControlName="raza" placeholder="Raza" type="text">
+                        <option value=""></option>
+                        <option value="{{perro.raza}}" *ngFor="let perro of arrRaza">{{perro.raza}}</option>
+                    </select>
+                </div>
+            </div>
+
+            <div _ngcontent class="form-group input-group">
+                <div _ngcontent-c5 class="offset-md-1 offset-x1-2 col-md-4 col-x1-3 text-center control-label">
+                    <label _ngcontent-c5>Color</label>
+                </div>
+                <div _ngcontent-c5 class="col-md-4 col-x1-4 inputGroupContainer">
+                    <select _ngcontent-c5="" class="form-control ng-untouched ng-pristine ng-invalid"
+                        formControlName="color" placeholder="Color" type="text">
+                        <option value=""></option>
+                        <option value="{{perro.color}}" *ngFor="let perro of arrColor">{{perro.color}}</option>
+                    </select>
+
+                </div>
+            </div>
+
+
+            <div _ngcontent class="form-group input-group">
+                <div _ngcontent-c5 class="offset-md-1 offset-x1-2 col-md-4 col-x1-3 text-center control-label">
+                    <label _ngcontent-c5>Tamaño</label>
+                </div>
+                <div _ngcontent-c5 class="col-md-4 col-x1-4 inputGroupContainer">
+                    <select _ngcontent-c5="" class="form-control ng-untouched ng-pristine ng-invalid"
+                        formControlName="tamano" placeholder="Tamaño" type="text">
+                        <option value=""></option>
+                        <option value="{{perro.tamano}}" *ngFor="let perro of arrSize">{{perro.tamano}}</option>
+                    </select>
+                </div>
+            </div>
+
+
+            <div _ngcontent class="form-group input-group">
+                <div _ngcontent-c5 class="offset-md-1 offset-x1-2 col-md-4 col-x1-3 text-center control-label">
+                    <label _ngcontent-c5>Sexo</label>
+                </div>
+                <div _ngcontent-c5 class="col-md-4 col-x1-4 inputGroupContainer">
+                    <select _ngcontent-c5="" class="form-control ng-untouched ng-pristine ng-invalid"
+                        formControlName="sexo" placeholder="Sexo" type="text">
+                        <option value=""></option>
+                        <option value="{{perro.sexo}}" *ngFor="let perro of arrSexo">{{perro.sexo}}</option>
+                    </select>
+                </div>
+            </div>
+            <div class="container col-6 md-6 mt-4 mb-4">
+                <button id="boton" type="submit" value="Buscar"
+                    class="btn btn-outline-secondary btn-block">BUSCAR</button>
+            </div>
+        </form>
+    </div>
+
+    <p *ngIf="arrFiltrado?.length == 0" class="font-weight-bold text-center"> No se encuentran resultados </p>
+
+    <div id="card" class="row mt-4 mb-4 shadow p-3 mb-5 bg-white rounded" *ngFor="let perro of arrFiltrado">
+
+        <div id="card2" class="row no-gutters">
+
+            <div class="col-md-4">
+                <img id="imagen" [src]="perro.foto" class="img-fluid rounded" alt="Responsive image">
+            </div>
+            <div class="col-md-8">
+                <div class="card-body">
+                    <h5 class="card-title"><mark class="font-weight-bold text-uppercase">{{perro.nombre}}</mark>
+                    </h5>
+                    <p class="card-text"><mark class="font-weight-bold">RAZA:</mark> {{perro.raza}}</p>
+                    <p class="card-text"><mark class="font-weight-bold">SEXO:</mark> {{perro.sexo}}</p>
+                    <p class="card-text"><mark class="font-weight-bold">COLOR:</mark> {{perro.color}}</p>
+                    <p class="card-text"><mark class="font-weight-bold">TAMAÑO:</mark>{{perro.tamano}} </p>
+                    <p class="card-text"><mark class="font-weight-bold">EDAD:</mark> {{perro.edad}} año/s</p>
+                    <p class="card-text"><mark class="font-weight-bold">CARACTERÍSTICAS:</mark>{{perro.caracteristicas}}
+                        <p class="card-text"><mark class="font-weight-bold">CENTRO: </mark>{{perro.perrera}}
+                            <button id="btnMapa" type="button" class="btn btn-sm mb-1" data-toggle="modal"
+                                data-target="#exampleModalMapa" (click)="getPerreraForFk(perro.fk_perrera)">IR A
+                                MAPA <i id="flecha" class="fas fa-long-arrow-alt-right"></i></button> </p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- <div *ngIf="arrFiltrado.length != 0">
+        <button class="btn btn-info btn-sm mb-1">Volver al buscador</button>
+    </div> -->
+
+    <div class="modal fade" id="exampleModalMapa" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle"
+        aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content" style="background-color: rgb(228, 175, 41)">
+                <button type="button" class="close text-right p-2" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true"><i class="fas fa-times-circle P-2"></i></span>
+                </button>
+                <div class="text-center">
+                    <h5 class="modal-title font-weight-bold" id="exampleModalLongTitle">MAPA</h5>
+                </div>
+                <div class="modal-body">
+                    <div id="perrera" class="bg text center">
+                        <p class="card-text"><strong>NOMBRE: </strong> {{arrayPerrera.nombre}} </p>
+                        <p class="card-text"><strong>DIRECCIÓN: </strong> {{arrayPerrera.direccion}}</p>
+                        <p class="card-text"> <strong>EMAIL:</strong> {{arrayPerrera.email}}</p>
+                        <p class="card-text"> <strong>TELEFONO:</strong> {{arrayPerrera.telefono}}</p>
+                    </div>
+                    <div class="mapa" id='mapPerrera' #Gmap></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

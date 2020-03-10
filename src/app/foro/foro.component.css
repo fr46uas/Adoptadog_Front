@@ -1,0 +1,30 @@
+div div #chat{
+    height: auto;
+    width: 100%;
+    margin-bottom: 20px;
+    background-color: white;
+    border-radius: 10px;
+    word-wrap: break-word;
+}
+
+div div .container{
+    overflow-x: scroll;
+    height: 600px;
+    background-color: #8ec443be;
+    padding: 20px;
+
+}
+div div #chat div p{
+     margin-top: 4px;
+    margin-left: 5px;
+    padding: 10px;
+    
+}
+div div #chat div span{
+    float: right;
+    margin-right: 10px;
+    margin-top: 10px;
+    word-wrap: break-word;
+
+
+}

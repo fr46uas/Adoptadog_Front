@@ -1,0 +1,39 @@
+#sticky-footer{
+    background-color: #3f571e;
+    height: 150px;
+    width: 100%;
+}
+
+
+div small{
+    text-align: center;
+}
+footer div .aviso{
+    width: 250px;
+    margin: 0 auto;
+    padding-top: 45px;
+    padding-left: 45px;
+    
+
+}
+
+footer div .social{
+     width: 200px;
+    margin: 0px auto 0 auto;
+    padding-top: 20px;
+    display: flex;
+    
+    justify-content: space-around;
+
+}
+
+footer div .social a{
+    font-size: 70%;
+    display: inline-block;
+    color: white;
+}
+footer div .aviso a{
+    
+    text-decoration: none;
+    color: white;
+}

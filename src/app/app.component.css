@@ -1,0 +1,103 @@
+nav{
+    font-size: 15px;
+    height: 70px;
+    font-weight: bold;
+    font-family: 'Montserrat', sans-serif;
+}
+
+nav a .fa{
+     transition: 0.5s;
+}
+
+nav a:hover .fa{
+    transform: rotatez(30deg);
+   
+}
+
+nav a #on:hover{
+    transform: rotatez(-360deg);
+    transition: 1.3s;
+}
+
+#inicio{
+    color: black;
+    padding: 5px;
+    margin-left: 20px;
+
+}
+
+#on{
+    font-size:40px
+}
+
+#off{
+    font-size:40px;
+    margin-bottom:2px ;
+}
+
+nav #user{
+    margin-bottom: 5px;
+        font-size: 20px;
+
+
+}
+
+#user_icon{
+    margin-left: 20px;
+    display: inline-block;
+}
+
+nav .navbar-brand {
+    font-size: 30px;
+}
+
+.footer{
+  position: relative;
+  right: 0;
+  bottom: 0;
+  left: 0;
+
+}
+div ul li{
+    margin-left: 26px;
+}
+
+#link{
+    margin-right: 20px;
+}
+
+div ul li a{
+    cursor: pointer;
+}
+
+nav div a {
+    cursor: pointer;
+}
+#img{
+    font-size: 80px;
+    color:black;
+    margin-top: 10px;
+}
+.modal-footer a{
+    display: inline-block;
+    color: black;
+}
+
+.active{
+     text-decoration: bold black;
+    border-radius: 20px;
+    color:whitesmoke;
+}
+
+.logo{
+     font-family: 'Montserrat', sans-serif;
+     text-shadow: 2px 2px 2px rgb(34, 80, 49);
+     margin-left: 10px;
+     font-weight: 400;
+}
+
+.logo span{
+     font-family: 'Indie Flower', cursive;
+     font-size: 130%;
+     
+}
