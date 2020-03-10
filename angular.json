@@ -127,5 +127,8 @@
       }
     }
   },
-  "defaultProject": "ProtectoraFront"
+  "defaultProject": "ProtectoraFront",
+  "cli": {
+    "analytics": false
+  }
 }
